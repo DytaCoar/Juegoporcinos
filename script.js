@@ -11,11 +11,11 @@ document.getElementById('start-button').addEventListener('click', () => {
 });
 
 function loadLevel(level) {
-    pigsContainer.innerHTML = '';
+    pigsContainer.innerHTML = ''; // Limpiar el contenedor de cerditos
     message.textContent = `Nivel ${level}: Encuentra el cerdito enfermo`;
 
-    const numberOfPigs = 5 + level;
-    const sickPigIndex = Math.floor(Math.random() * numberOfPigs);
+    const numberOfPigs = 5 + level; // Número de cerditos
+    const sickPigIndex = Math.floor(Math.random() * numberOfPigs); // Índice del cerdito enfermo
 
     for (let i = 0; i < numberOfPigs; i++) {
         const pig = document.createElement('div');
@@ -33,7 +33,7 @@ function checkPig(isSick) {
         });
         if (currentLevel < levels) {
             currentLevel++;
-            loadLevel(currentLevel);
+            loadLevel(currentLevel); // Cargar el siguiente nivel
         } else {
             message.textContent = '¡Felicidades! Has encontrado todos los cerditos enfermos.';
             pigsContainer.innerHTML = '';
