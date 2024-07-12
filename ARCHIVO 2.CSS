@@ -1,20 +1,30 @@
+/* styles.css */
+
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-image: url('fondo.jpg');
+    background-size: cover;
     margin: 0;
 }
 
-#game {
-    display: grid;
-    grid-template-columns: repeat(5, 100px);
-    grid-gap: 10px;
+#game-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.cerdito {
+#pigs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pig {
     width: 100px;
     height: 100px;
     background-size: cover;
