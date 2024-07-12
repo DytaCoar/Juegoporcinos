@@ -38,7 +38,7 @@ function checkPig(isSick) {
             message.textContent = '¡Felicidades! Has encontrado todos los cerditos enfermos.';
             pigsContainer.innerHTML = '';
             currentLevel = 1; // Reiniciar
-            setTimeout(() => loadLevel(currentLevel), 2000);
+            setTimeout(() => loadLevel(currentLevel), 2000); // Esperar 2 segundos antes de reiniciar
         }
     } else {
         errorSound.play().catch(error => {
@@ -46,4 +46,3 @@ function checkPig(isSick) {
         });
         alert('Ese no es el cerdito enfermo, ¡inténtalo de nuevo!');
     }
-}
