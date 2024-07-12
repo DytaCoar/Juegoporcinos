@@ -46,3 +46,4 @@ function checkPig(isSick) {
         });
         alert('Ese no es el cerdito enfermo, ¡inténtalo de nuevo!');
     }
+}
