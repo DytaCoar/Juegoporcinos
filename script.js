@@ -28,16 +28,22 @@ function loadLevel(level) {
 
 function checkPig(isSick) {
     if (isSick) {
-        winSound.play();
+        winSound.play().catch(error => {
+            console.log("Error al reproducir el sonido de victoria:", error);
+        });
         if (currentLevel < levels) {
             currentLevel++;
             loadLevel(currentLevel);
         } else {
             message.textContent = '¡Felicidades! Has encontrado todos los cerditos enfermos.';
             pigsContainer.innerHTML = '';
+            currentLevel = 1; // Reiniciar
+            setTimeout(() => loadLevel(currentLevel), 2000);
         }
     } else {
-        errorSound.play();
+        errorSound.play().catch(error => {
+            console.log("Error al reproducir el sonido de error:", error);
+        });
         alert('Ese no es el cerdito enfermo, ¡inténtalo de nuevo!');
     }
 }
